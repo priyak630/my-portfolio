@@ -29,4 +29,18 @@ const observer = new IntersectionObserver(
 sections.forEach(section => {
     observer.observe(section);
 });
+
+const revealCards = document.querySelectorAll(".reveal-card");
+
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+revealCards.forEach(card => {
+    cardObserver.observe(card);
+});
     

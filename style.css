@@ -298,7 +298,7 @@ section {
 
 .about-points {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 15px;
 }
 
@@ -1130,4 +1130,33 @@ section {
     outline: none;
     background: white;
     color: #333333;
+}
+
+/* SCROLL REVEAL  - PHOTOS */
+
+.reveal-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-card:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.reveal-card:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.reveal-card:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.reveal-card:nth-child(4) {
+    transition-delay: 0.45s;
 }
