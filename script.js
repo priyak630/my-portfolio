@@ -5,22 +5,22 @@ const observer = new IntersectionObserver(
     (entries) => {
         const visibleSection = entries
             .filter(entry => entry.isIntersecting)
-            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        
+            .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+
         if(!visibleSection) return;
 
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                });
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+        });
 
-                const activeLink = document.querySelector(
-                    '.nav-menu a[href="#' + visibleSection.target.id + '"]'
-                );
+        const activeLink = document.querySelector(
+            '.nav-menu a[href="#' + visibleSection.target.id + '"]'
+        );
 
-                if (activeLink) {
-                    activeLink.classList.add("active");
-                }
-            },
+        if (activeLink) {
+            activeLink.classList.add("active");
+        }
+    },
     {
         rootMargin: "-35% 0px -55% 0px"
     }

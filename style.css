@@ -1089,6 +1089,10 @@ section {
     .service-content {
         padding-top: 10px;
     }
+
+    .nav-menu a:hover:not(.active) {
+        color: #555;
+    }
 }
 
 /*=====================================
